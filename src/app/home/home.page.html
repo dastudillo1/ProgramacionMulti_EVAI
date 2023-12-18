@@ -1,20 +1,71 @@
-<ion-header [translucent]="true">
+<!--<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Bienvenido
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card collapse="condense">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title color="secondary" class="ion-text-center">Retail OFF</ion-card-title>
+    </ion-card-header>
+
+<ion-list-header>
+  <ion-label>Nuestros proyectos</ion-label>
+</ion-list-header>
+<ion-list>
+  <ion-item *ngFor="let proyecto of proyectos">
+    <ion-label>{{ proyecto.nombre }}</ion-label>
+  </ion-item>
+</ion-list>
+<ion-card-content>
+  <img src="../assets/img/sale.png">
+  <ion-button expand="full" routerLink="/login" color="secondary" shape="round" border-radius="20px">Iniciar Sesión</ion-button>
+  <br>
+  <h2 class="Sans Serif" class="ion-text-center">¿Estas Registrado?</h2>
+  <br>
+  <h2 class="Sans Serif"></h2>
+  <ion-button expand="full" routerLink="/registro" style="fontSize: 0.8rem;" color="secondary" shape="round" border-radius="20px">Registrate con nosotros</ion-button>
+</ion-card-content>
+  </ion-card>
+</ion-content>-->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Bienvenido
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card collapse="condense" class="ion-text-center">
+    <ion-card-header>
+      <ion-card-title color="secondary">Retail OFF</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Lista de proyectos -->
+      <ion-list-header>
+        <ion-label>Nuestros proyectos</ion-label>
+      </ion-list-header>
+      <ion-list>
+        <ion-item *ngFor="let proyecto of proyectos">
+          <ion-label>{{ proyecto.nombre }}</ion-label>
+        </ion-item>
+      </ion-list>
+      <!-- Botones -->
+      <ion-button expand="full" routerLink="/login" color="secondary" shape="round" class="ion-margin-top">
+        Iniciar Sesión
+      </ion-button>
+      <ion-button expand="full" routerLink="/registro" color="secondary" shape="round" class="ion-margin-top">
+        Registrate con nosotros
+      </ion-button>
+    </ion-card-content>
+    <!-- Imagen -->
+    <img src="../assets/img/sale.png" alt="Retail OFF" class="ion-margin-top">
+  </ion-card>
 </ion-content>
+

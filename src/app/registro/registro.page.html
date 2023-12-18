@@ -1,0 +1,84 @@
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>registro</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label></ion-label>
+    <ion-input placeholder="Nombres" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label></ion-label>
+    <ion-input placeholder="Apellidos" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label></ion-label>
+    <ion-input placeholder="Nombre de usuario" required pattern="[a-zA-Z0-9_]+"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label></ion-label>
+    <ion-input placeholder="Contraseña" type="password" minlength="8" required></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" routerLink="/logeado" color="secondary" shape="round" border-radius="20px">Registrar</ion-button>
+
+</ion-content>-->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="registroForm" (ngSubmit)="registrar()">
+    <ion-item>
+      <ion-label position="floating">Nombres</ion-label>
+      <ion-input formControlName="nombres" placeholder="Nombres"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input formControlName="apellidos" placeholder="Apellidos"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre de usuario</ion-label>
+      <ion-input formControlName="nombreUsuario" placeholder="Nombre de usuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="contraseña" type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+
+    <!-- Mensaje de error -->
+    <!-- Mensaje de error -->
+    <div *ngIf="registroForm.invalid && (registroForm.dirty || registroForm.touched)">
+      <p *ngIf="registroForm.controls['nombres'].errors?.['required']" class="error-text">Nombres son requeridos.</p>
+      <p *ngIf="registroForm.controls['nombres'].errors?.['pattern']" class="error-text">Nombres no deben contener números.</p>
+      <p *ngIf="registroForm.controls['apellidos'].errors?.['required']" class="error-text">Apellidos son requeridos.</p>
+      <p *ngIf="registroForm.controls['apellidos'].errors?.['pattern']" class="error-text">Apellidos no deben contener números.</p>
+      <p *ngIf="registroForm.controls['nombreUsuario'].errors?.['required']" class="error-text">Nombre de usuario es requerido.</p>
+      <p *ngIf="registroForm.controls['nombreUsuario'].errors?.['pattern']" class="error-text">Nombre de usuario no cumple el patrón.</p>
+      <p *ngIf="registroForm.controls['contraseña'].errors?.['required']" class="error-text">Contraseña es requerida.</p>
+      <p *ngIf="registroForm.controls['contraseña'].errors?.['minlength']" class="error-text">Contraseña debe tener al menos 8 caracteres.</p>
+    </div>
+
+    <ion-button expand="full" color="secondary" shape="round" type="submit" [disabled]="!registroForm.valid" routerLink="/logeado">
+      Registrar
+    </ion-button>
+  </form>
+</ion-content>

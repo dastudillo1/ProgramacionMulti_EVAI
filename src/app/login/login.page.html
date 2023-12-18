@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" contextmenu="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item>
+      <ion-label position="floating">Nombre Usuario</ion-label>
+      <ion-input formControlName="nombreUsuario" placeholder="Nombre Usuario"></ion-input>
+      <p *ngIf="loginForm.get('nombreUsuario')?.hasError('required') && (loginForm.get('nombreUsuario')?.dirty || loginForm.get('nombreUsuario')?.touched)" class="error-text">Nombre de usuario es requerido.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="contraseña" type="password" placeholder="Contraseña"></ion-input>
+      <p *ngIf="loginForm.get('contraseña')?.hasError('required') && (loginForm.get('contraseña')?.dirty || loginForm.get('contraseña')?.touched)" class="error-text">Contraseña es requerida.</p>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" color="secondary" shape="round" [disabled]="!loginForm.valid">Ingresar</ion-button>
+  </form>
+</ion-content>
