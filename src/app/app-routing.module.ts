@@ -28,16 +28,16 @@ const routes: Routes = [
     loadChildren: () => import('./logeado/logeado.module').then( m => m.LogeadoPageModule)
   },
   {
-    path: 'test',
-    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
-  },
-  {
-    path: 'logeado',
-    loadChildren: () => import('./logeado/logeado.module').then( m => m.LogeadoPageModule)
-  },
-  {
     path: 'datos',
     loadChildren: () => import('./datos/datos.module').then( m => m.DatosPageModule)
+  },
+  {
+    path: 'scan',
+    loadChildren: () => import('./pages/navscan/navscan.module').then( m => m.NavscanPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   },
 ];
 

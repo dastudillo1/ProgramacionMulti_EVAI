@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" contextmenu="Regresar" defaultHref="/logeado"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Escanear</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-button expand="full" fill="outline" shape="round" size="large" (click)="scan()">
+    Escanear Codigo
+  </ion-button>
+
+</ion-content>
+
+
