@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" defaultHref="/logeado"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Envio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-item>
+    <ion-label position="floating">Nombre Cliente</ion-label>
+    <ion-input [(ngModel)]="cliente" placeholder="Ingrese nombre cliente"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Dirección de destino</ion-label>
+    <ion-input [(ngModel)]="destino" placeholder="Ingrese destino del envío"></ion-input>
+  </ion-item>
+
+  <!-- Selector de Fecha para Fecha de Envío -->
+  <ion-item>
+    <ion-label position="floating">Fecha Envio</ion-label>
+    <ion-datetime [(ngModel)]="fechaenvio" displayFormat="DD/MM/YYYY" placeholder="Seleccione fecha"></ion-datetime>
+  </ion-item>
+  <!-- Menú desplegable para Tipo de Envío -->
+  <ion-item>
+    <!--<ion-label position="floating">Tipo Envio</ion-label>-->
+    <ion-select [(ngModel)]="tipoenvio" placeholder="Seleccione tipo de envío">
+      <ion-select-option value="estandar">Estándar</ion-select-option>
+      <ion-select-option value="express">Express</ion-select-option>
+      <ion-select-option value="internacional">Internacional</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Menú desplegable para Estado de Envío -->
+  <ion-item>
+    <!--<ion-label position="floating">Estado envio</ion-label>-->
+    <ion-select [(ngModel)]="estadoenvio" placeholder="Seleccione estado del envío">
+      <ion-select-option value="en_transito">En tránsito</ion-select-option>
+      <ion-select-option value="entregado">Entregado</ion-select-option>
+      <ion-select-option value="retrasado">Retrasado</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Campo para Número de Seguimiento -->
+  <ion-item>
+    <ion-label position="floating">Nro Seguimiento</ion-label>
+    <ion-input [(ngModel)]="nroseguimiento" placeholder="Ingrese nro seguimiento"></ion-input>
+  </ion-item>
+
+  <!-- Botón para enviar la información -->
+  <ion-button expand="full" (click)="postEnvio()">Agregar</ion-button>
+</ion-content>

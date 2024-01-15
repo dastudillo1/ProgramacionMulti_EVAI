@@ -39,6 +39,18 @@ const routes: Routes = [
     path: 'map',
     loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   },
+  {
+    path: 'aws',
+    loadChildren: () => import('./pages/aws/aws.module').then( m => m.AwsPageModule)
+  },
+  {
+    path: 'aws-producto',
+    loadChildren: () => import('./pages/aws-producto/aws-producto.module').then( m => m.AwsProductoPageModule)
+  },
+  {
+    path: 'aws-envio',
+    loadChildren: () => import('./pages/aws-envio/aws-envio.module').then( m => m.AwsEnvioPageModule)
+  },
 ];
 
 @NgModule({

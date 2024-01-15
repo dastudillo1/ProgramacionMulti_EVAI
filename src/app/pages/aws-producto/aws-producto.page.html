@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" defaultHref="/logeado"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  
+  <ion-item>
+    <ion-label position="floating">Nombre Producto</ion-label>
+    <ion-input [(ngModel)]="nombre" placeholder="Ingrese nombre del producto"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-textarea [(ngModel)]="descripcion" placeholder="Ingrese descripción del producto"></ion-textarea>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="floating">Precio</ion-label>
+    <ion-input [(ngModel)]="precio" type="number" placeholder="Ingrese precio"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="floating">Proveedor</ion-label>
+    <ion-input [(ngModel)]="proveedor" placeholder="Ingrese proveedor"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <!--<ion-label position="floating">Tipo Categoría</ion-label>-->
+    <ion-select [(ngModel)]="categoria" placeholder="Seleccione categoría">
+      <ion-select-option value="Ropa">Ropa</ion-select-option>
+      <ion-select-option value="Calzado">Calzado</ion-select-option>
+      <ion-select-option value="Belleza">Belleza</ion-select-option>
+      
+    </ion-select>
+  </ion-item>
+
+  
+  <ion-button expand="full" (click)="postProducto()">Agregar</ion-button>
+</ion-content>

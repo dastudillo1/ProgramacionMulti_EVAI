@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" defaultHref="/logeado"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="nombre" placeholder="Ingrese nombre"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input [(ngModel)]="apellido" placeholder="Ingrese apellido"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input [(ngModel)]="usuario" placeholder="Ingrese usuario"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="floating">Dirección</ion-label>
+    <ion-input [(ngModel)]="direccion" placeholder="Ingrese dirección"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="email" type="email" placeholder="Ingrese email"></ion-input>
+  </ion-item>
+
+  
+  <ion-button expand="full" (click)="postUser()">Agregar</ion-button>
+</ion-content>
